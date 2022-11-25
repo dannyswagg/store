@@ -5,6 +5,8 @@ import Navbar from "./Components/Navbar";
 import Products from "./Components/Products";
 import Product from "./Components/Product";
 import { Route, Routes } from "react-router-dom";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="products" element={<Products />} />
         <Route path="products/product/:id" element={<Product />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
     </>
   );

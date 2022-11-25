@@ -50,13 +50,13 @@ const Products = () => {
           {filter.map((product) => {
             return (
               <>
-                <div>
+                <div className="hover:scale-105 duration-300">
                   <div
-                    className="shadow-lg rounded p-4 mx-auto"
+                    className="shadow-2xl rounded-2xl p-4 mx-auto"
                     key={product.title}
                   >
                     <img
-                      className="h-[300px] mx-auto mb-2"
+                      className="h-[300px] mx-auto mb-2 p-8"
                       src={product.image}
                       alt={product.title}
                     />
@@ -65,7 +65,7 @@ const Products = () => {
                         {product.title.substring(0, 12)}
                       </h1>
                       <Link to={`/products/product/${product.id}`}>
-                        <button className="rounded px-4 border-black border">
+                        <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200">
                           Buy Now
                         </button>
                       </Link>
@@ -84,31 +84,34 @@ const Products = () => {
     <>
       <div className="text-center mt-10 px-20 mb-10 cursor-pointer">
         <h1 className="text-5xl font-bold mb-5">All Products</h1>
-        <hr />
+        <hr className="text-[#CF8E69]" />
         <ul className="flex items-center justify-center rounded font-bold my-5">
-          <li className="px-5 py-2 border" onClick={() => setFilter(data)}>
+          <li
+            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
+            onClick={() => setFilter(data)}
+          >
             All
           </li>
           <li
-            className="px-5 py-2 border"
+            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("men's clothing")}
           >
             Men
           </li>
           <li
-            className="px-5 py-2 border"
+            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("women's clothing")}
           >
             Women
           </li>
           <li
-            className="px-5 py-2 border"
+            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("jewelery")}
           >
             Jewerly
           </li>
           <li
-            className="px-5 py-2 border"
+            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("electronics")}
           >
             Electronics

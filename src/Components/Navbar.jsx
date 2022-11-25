@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
       <div className="flex justify-between items-center h-20 w-full mx-auto px-16 shadow">
         <Link to="/">
-          <h1 className="font-bold text-3xl">Store</h1>
+          <h1 className="font-bold text-3xl">Berry-Stores</h1>
           <img src="" alt="" />
         </Link>
         <ul className="flex mx-auto">
@@ -27,15 +27,24 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="buttons font-bold flex">
-          <button className="inline-flex rounded mr-2 px-6 py-2 border">
+          <button
+            className="inline-flex rounded mr-2 px-6 py-2 border text-[#CF8E69]
+           bg-black hover:bg-transparent hover:text-black duration-200"
+          >
             <FaSignInAlt size={20} className="mr-1 pt-2" /> Login
           </button>
 
-          <button className="inline-flex rounded mr-2 px-6 py-2 border">
+          <button
+            className="inline-flex rounded mr-2 px-6 py-2 border text-[#CF8E69]
+           bg-black hover:bg-transparent hover:text-black duration-200"
+          >
             <FaUserPlus size={20} className="mr-1 pt-2" /> Register
           </button>
           <Link to="cart">
-            <button className="inline-flex rounded px-6 py-2 border">
+            <button
+              className="inline-flex rounded px-6 py-2 border text-[#CF8E69]
+             bg-black hover:bg-transparent hover:text-black duration-200"
+            >
               <FaShoppingCart size={20} className="mr-1 pt-2" />
               Cart ({state.length})
             </button>
