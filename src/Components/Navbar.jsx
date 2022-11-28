@@ -27,23 +27,27 @@ const Navbar = () => {
           </Link>
         </ul>
         <div className="buttons font-bold flex">
-          <button
-            className="inline-flex rounded mr-2 px-6 py-2 border text-[#CF8E69]
-           bg-black hover:bg-transparent hover:text-black duration-200"
-          >
-            <FaSignInAlt size={20} className="mr-1 pt-2" /> Login
-          </button>
+          <Link to="login">
+            <button
+              className="inline-flex rounded mr-2 px-6 py-2 text-[#CF8E69]
+           bg-black hover:bg-transparent hover:text-black duration-200 border hover:border-black"
+            >
+              <FaSignInAlt size={20} className="mr-1 pt-2" /> Login
+            </button>
+          </Link>
 
-          <button
-            className="inline-flex rounded mr-2 px-6 py-2 border text-[#CF8E69]
-           bg-black hover:bg-transparent hover:text-black duration-200"
-          >
-            <FaUserPlus size={20} className="mr-1 pt-2" /> Register
-          </button>
+          <Link to="register">
+            <button
+              className="inline-flex rounded mr-2 px-6 py-2 text-[#CF8E69]
+           bg-black hover:bg-transparent hover:text-black duration-200 border hover:border-black"
+            >
+              <FaUserPlus size={20} className="mr-1 pt-2" /> Register
+            </button>
+          </Link>
           <Link to="cart">
             <button
-              className="inline-flex rounded px-6 py-2 border text-[#CF8E69]
-             bg-black hover:bg-transparent hover:text-black duration-200"
+              className="inline-flex rounded px-6 py-2 text-[#CF8E69]
+             bg-black hover:bg-transparent hover:text-black duration-200 border hover:border-black"
             >
               <FaShoppingCart size={20} className="mr-1 pt-2" />
               Cart ({state.length})

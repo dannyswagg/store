@@ -46,7 +46,7 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 md:gird-cols-2 sm:grid-cols-2 gap-10">
           {filter.map((product) => {
             return (
               <>
@@ -82,36 +82,38 @@ const Products = () => {
 
   return (
     <>
-      <div className="text-center mt-10 px-20 mb-10 cursor-pointer">
-        <h1 className="text-5xl font-bold mb-5">All Products</h1>
-        <hr className="text-[#CF8E69]" />
-        <ul className="flex items-center justify-center rounded font-bold my-5">
+      <div className="text-center mt-10 px-10 mb-10 cursor-pointer">
+        <h1 className="lg:text-5xl md:text-4xl text-2xl font-bold mb-5">
+          All Products
+        </h1>
+        <hr className="border border-black" />
+        <ul className="items-center justify-center rounded font-bold my-5 lg:flex md:flex block">
           <li
-            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
+            className="px-5 py-2 border border-black hover:text-[#CF8E69] hover:bg-black"
             onClick={() => setFilter(data)}
           >
             All
           </li>
           <li
-            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
+            className="px-5 py-2 border border-black hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("men's clothing")}
           >
             Men
           </li>
           <li
-            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
+            className="px-5 py-2 border border-black hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("women's clothing")}
           >
             Women
           </li>
           <li
-            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
+            className="px-5 py-2 border border-black hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("jewelery")}
           >
             Jewerly
           </li>
           <li
-            className="px-5 py-2 border hover:text-[#CF8E69] hover:bg-black"
+            className="px-5 py-2 border border-black hover:text-[#CF8E69] hover:bg-black"
             onClick={() => filterProduct("electronics")}
           >
             Electronics

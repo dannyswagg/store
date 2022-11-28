@@ -38,7 +38,7 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="grid grid-cols-2 gap-5 my-10">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10">
           <div>
             <img
               className="mx-auto"
