@@ -11,7 +11,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 md:grid-cols-1 md:text-center sm:text-center">
           <div>
             {" "}
-            <div className="px-20">
+            <div className="px-20 py-8">
               <h2 className="text-2xl my-4 font-thin">Who We Are?</h2>
               <p className="text-gray-400 text-justify">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
@@ -26,7 +26,7 @@ const About = () => {
                 unde at nemo suscipit incidunt non voluptates obcaecati, dolore,
                 magnam, recusandae veniam.
               </p>
-              <h3 className="text-2 xl my-4 font-thin">Why us?</h3>
+              <h3 className="text-2xl my-4 font-thin">Why us?</h3>
               <p className="text-gray-400 text-justify">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
                 sequi dicta voluptates eum, blanditiis veritatis delectus! Quae

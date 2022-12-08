@@ -74,9 +74,6 @@ const Contact = () => {
 
                 <div className="flex my-4 w-2/3 lg:w-1/2">
                   <div className="flex flex-col">
-                    <i className="fas fa-map-marker-alt pt-2 pr-2" />
-                  </div>
-                  <div className="flex flex-col">
                     <h2 className="text-2xl">Main Office</h2>
                     <p className="text-gray-400">
                       5555 Tailwind RD, Pleasant Grove, UT 73533
@@ -86,12 +83,8 @@ const Contact = () => {
 
                 <div className="flex my-4 w-2/3 lg:w-1/2">
                   <div className="flex flex-col">
-                    <i className="fas fa-phone-alt pt-2 pr-2" />
-                  </div>
-                  <div className="flex flex-col">
                     <h2 className="text-2xl">Call Us</h2>
                     <p className="text-gray-400">Tel: xxx-xxx-xxx</p>
-                    <p className="text-gray-400">Fax: xxx-xxx-xxx</p>
                   </div>
                 </div>
 

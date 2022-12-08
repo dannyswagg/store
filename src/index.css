@@ -5,3 +5,7 @@
 .ib {
   border-radius: 76% 24% 70% 30% / 65% 84% 16% 35%;
 }
+.active {
+  color: #cf8e69;
+  font-weight: 400;
+}

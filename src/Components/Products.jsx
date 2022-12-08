@@ -50,11 +50,11 @@ const Products = () => {
           {filter.map((product) => {
             return (
               <>
-                <div className="hover:scale-105 duration-300">
-                  <div
-                    className="shadow-2xl rounded-2xl p-4 mx-auto"
-                    key={product.title}
-                  >
+                <div
+                  className="hover:scale-105 duration-300"
+                  key={product.title}
+                >
+                  <div className="shadow-2xl rounded-2xl p-4 mx-auto">
                     <img
                       className="h-[300px] mx-auto mb-2 p-8"
                       src={product.image}
