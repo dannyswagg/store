@@ -63,32 +63,22 @@ const Navbar = () => {
             </Link>
           </div>
           <div onClick={handleNav} className="block lg:hidden">
-            {open ? (
-              <Hamburger
-                distance="sm"
-                duration={0.8}
-                color="#CF8E69"
-                size={25}
-                rounded
-                hideOutline={false}
-                label="Show menu"
-              />
-            ) : (
-              <Hamburger
-                distance="sm"
-                duration={0.8}
-                color="#CF8E69"
-                size={25}
-                rounded
-                hideOutline={false}
-                label="Show menu"
-              />
-            )}
+            <Hamburger
+              distance="sm"
+              duration={0.9}
+              color="#CF8E69"
+              size={25}
+              rounded
+              hideOutline={false}
+              label="Show menu"
+              toggled={open}
+              toggle={setOpen}
+            />
           </div>
           <div
             className={
               open
-                ? "fixed left-0 top-0 w-[50%] h-full bg-black text-[#CF8E69] ease-in-out duration-300 pt-10 text-center"
+                ? "fixed left-0 top-0 w-[50%] h-full bg-black text-[#CF8E69] ease-in-out duration-800 pt-10 text-center"
                 : "fixed left-[-100%]"
             }
           >

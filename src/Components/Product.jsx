@@ -38,7 +38,10 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10">
+        <div
+          className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10"
+          key={product.id}
+        >
           <div>
             <img
               className="mx-auto"
@@ -65,12 +68,12 @@ const Product = () => {
             <h3 className="font-bold text-4xl my-3">$ {product.price}</h3>
             <p className="capitalize my-5">{product.description}</p>
             <button
-              className="mr-2 border rounded px-6 py-2 font-bold"
+              className="mr-2 border border-black hover:bg-[#CF8E69] duration-200 rounded px-6 py-2 font-bold"
               onClick={() => addProduct(product)}
             >
               Add to Cart
             </button>
-            <button className="border rounded px-6 py-2 font-bold bg-black text-white">
+            <button className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]">
               Go to Cart
             </button>
           </div>
