@@ -27,13 +27,9 @@ const Products = () => {
   const Loading = () => {
     return (
       <>
-        <div>
-          <SkeletonTheme color="#000000" highlightColor="#444">
-            <Skeleton height={250} width={250}>
-              Loading...
-            </Skeleton>
-          </SkeletonTheme>
-        </div>
+        <SkeletonTheme baseColor="#202020" highlightColor="#444">
+          <Skeleton height={250} width={250} />
+        </SkeletonTheme>
       </>
     );
   };

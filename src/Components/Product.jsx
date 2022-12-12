@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const Product = () => {
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,9 @@ const Product = () => {
   const Loading = () => {
     return (
       <>
-        <div className="font-bold text-7xl text-center">Loading...</div>
+        <SkeletonTheme>
+          <Skeleton />
+        </SkeletonTheme>
       </>
     );
   };

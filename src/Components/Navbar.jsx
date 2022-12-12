@@ -78,8 +78,8 @@ const Navbar = () => {
           <div
             className={
               open
-                ? "fixed left-0 top-0 w-[50%] h-full bg-black text-[#CF8E69] ease-in-out duration-800 pt-10 text-center"
-                : "fixed left-[-100%]"
+                ? "fixed left-0 top-0 w-[50%] h-full bg-black text-[#CF8E69] ease-in-out duration-100 pt-10 text-center"
+                : "fixed left-[-100%] duration-100"
             }
           >
             <h1 className="uppercase text-3xl mb-2">Berries</h1>
