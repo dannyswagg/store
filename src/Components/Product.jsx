@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const Product = () => {
   const [loading, setLoading] = useState(false);
@@ -31,9 +30,17 @@ const Product = () => {
   const Loading = () => {
     return (
       <>
-        <SkeletonTheme>
-          <Skeleton />
-        </SkeletonTheme>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10">
+          <div>
+            <img
+              className="mx-auto rounded shadow-2xl hover:scale-105 duration-300"
+              alt={product.title}
+              height={400}
+              width={400}
+            />
+          </div>
+          <div className="shadow-2xl hover:scale-105 duration-300"></div>
+        </div>
       </>
     );
   };

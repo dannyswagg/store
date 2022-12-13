@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 
 const Products = () => {
@@ -27,9 +26,44 @@ const Products = () => {
   const Loading = () => {
     return (
       <>
-        <SkeletonTheme baseColor="#202020" highlightColor="#444">
-          <Skeleton height={250} width={250} />
-        </SkeletonTheme>
+        <div className="grid lg:grid-cols-3 md:gird-cols-2 sm:grid-cols-2 gap-10">
+          <div>
+            {" "}
+            <div className="hover:scale-105 duration-300">
+              <div className="shadow-2xl rounded-2xl p-4 mx-auto">
+                <img className="h-[300px] mx-auto mb-2 p-8" />
+                <div className="card-body">
+                  <h1 className="font-bold text-2xl mb-2"></h1>
+                  <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            {" "}
+            <div className="hover:scale-105 duration-300">
+              <div className="shadow-2xl rounded-2xl p-4 mx-auto">
+                <img className="h-[300px] mx-auto mb-2 p-8" />
+                <div className="card-body">
+                  <h1 className="font-bold text-2xl mb-2"></h1>
+                  <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            {" "}
+            <div className="hover:scale-105 duration-300">
+              <div className="shadow-2xl rounded-2xl p-4 mx-auto">
+                <img className="h-[300px] mx-auto mb-2 p-8" />
+                <div className="card-body">
+                  <h1 className="font-bold text-2xl mb-2"></h1>
+                  <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     );
   };
@@ -46,10 +80,7 @@ const Products = () => {
           {filter.map((product) => {
             return (
               <>
-                <div
-                  className="hover:scale-105 duration-300"
-                  key={product.title}
-                >
+                <div className="hover:scale-105 duration-300" key={product.id}>
                   <div className="shadow-2xl rounded-2xl p-4 mx-auto">
                     <img
                       className="h-[300px] mx-auto mb-2 p-8"

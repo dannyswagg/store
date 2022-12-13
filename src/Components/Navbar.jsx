@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaShoppingCart, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -8,7 +8,17 @@ import ber from "../Assests/ber.png";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const state = useSelector((state) => state.handleCart);
+  const refOne = useRef(null);
 
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+
+  const handleClickOutside = (e) => {
+    if (!refOne.current.contains(e.target)) {
+      // console.log("clicked outside");
+    }
+  };
   const handleNav = () => {
     setOpen(!open);
   };
@@ -62,7 +72,7 @@ const Navbar = () => {
               </button>
             </Link>
           </div>
-          <div onClick={handleNav} className="block lg:hidden">
+          <div onClick={handleNav} className="block lg:hidden focus:outline-0">
             <Hamburger
               distance="sm"
               duration={0.9}
@@ -76,10 +86,11 @@ const Navbar = () => {
             />
           </div>
           <div
+            ref={refOne}
             className={
               open
-                ? "fixed left-0 top-0 w-[50%] h-full bg-black text-[#CF8E69] ease-in-out duration-100 pt-10 text-center"
-                : "fixed left-[-100%] duration-100"
+                ? "fixed left-0 top-0 w-[50%] h-full bg-black text-[#CF8E69] ease-in-out duration-800 pt-10 text-center"
+                : "fixed left-[-100%]"
             }
           >
             <h1 className="uppercase text-3xl mb-2">Berries</h1>
