@@ -8,6 +8,13 @@ import { Link } from "react-router-dom";
 import ber from "../Assests/ber.png";
 
 const Footer = () => {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className="w-full h-3/5 py-10 flex items-center justify-center bg-black inset-x-0 bottom-0">
@@ -24,7 +31,10 @@ const Footer = () => {
             </p>
             <div className="w-44 pt-6 md:pt-0">
               <Link to="contact">
-                <h1 className="bg-black text-[#CF8E69] border border-[#CF8E69] justify-center text-center rounded shadow px-10 py-3 flex items-center">
+                <h1
+                  onClick={handleClick}
+                  className="bg-black text-[#CF8E69] border border-[#CF8E69] justify-center text-center rounded shadow px-10 py-3 flex items-center"
+                >
                   Contact US
                 </h1>
               </Link>

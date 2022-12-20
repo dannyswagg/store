@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#root:focus {
+  outline: none !important;
+}
+
 .ib {
   border-radius: 76% 24% 70% 30% / 65% 84% 16% 35%;
 }
