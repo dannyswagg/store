@@ -67,7 +67,7 @@ const Navbar = () => {
             <Link to="cart">
               <li
                 className="border lg:hidden border-black text-black rounded
-             bg-[#CF8E69] p-1 inline-flex items-center -mr-8"
+             bg-[#CF8E69] p-1 inline-flex items-center -mr-12"
               >
                 <FaShoppingCart /> ({state.length})
               </li>
