@@ -13,3 +13,6 @@ body {
   color: #cf8e69;
   font-weight: 400;
 }
+.skeleton {
+  height: 40px;
+}

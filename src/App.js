@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import Error from "./Components/Error";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </>

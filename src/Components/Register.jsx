@@ -66,9 +66,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-      {/* <div className="bg-black text-[#CF8E69] h-full mx-auto">
-        <h1>Register With Us</h1>
-      </div> */}
     </>
   );
 };

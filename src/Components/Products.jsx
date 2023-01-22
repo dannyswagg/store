@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "../redux/actions";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -7,19 +11,28 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
-  useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
-        setLoading(false);
-      }
-      return () => {
-        componentMounted = false;
-      };
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const getProducts = async () => {
+    setLoading(true);
+    const response = await fetch("https://fakestoreapi.com/products");
+    if (componentMounted) {
+      setData(await response.clone().json());
+      setFilter(await response.json());
+      setLoading(false);
+    }
+    return () => {
+      componentMounted = false;
     };
+  };
+
+  useEffect(() => {
     getProducts();
   }, []);
 
@@ -27,42 +40,27 @@ const Products = () => {
     return (
       <>
         <div className="grid lg:grid-cols-3 md:gird-cols-2 sm:grid-cols-2 gap-10">
-          <div>
-            {" "}
-            <div className="hover:scale-105 duration-300">
-              <div className="shadow-2xl rounded-2xl p-4 mx-auto">
-                <img className="h-[300px] mx-auto mb-2 p-8" />
-                <div className="card-body">
-                  <h1 className="font-bold text-2xl mb-2"></h1>
-                  <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            {" "}
-            <div className="hover:scale-105 duration-300">
-              <div className="shadow-2xl rounded-2xl p-4 mx-auto">
-                <img className="h-[300px] mx-auto mb-2 p-8" />
-                <div className="card-body">
-                  <h1 className="font-bold text-2xl mb-2"></h1>
-                  <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            {" "}
-            <div className="hover:scale-105 duration-300">
-              <div className="shadow-2xl rounded-2xl p-4 mx-auto">
-                <img className="h-[300px] mx-auto mb-2 p-8" />
-                <div className="card-body">
-                  <h1 className="font-bold text-2xl mb-2"></h1>
-                  <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"></button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Skeleton
+            className="hover:scale-105 duration-300 shadow-xl"
+            height={400}
+            borderRadius={"rounded"}
+            baseColor="#202020"
+            highlightColor="#444"
+          />
+          <Skeleton
+            className="hover:scale-105 duration-300 shadow-xl"
+            height={400}
+            borderRadius={"rounded"}
+            baseColor="#202020"
+            highlightColor="#444"
+          />
+          <Skeleton
+            className="hover:scale-105 duration-300 shadow-xl"
+            height={400}
+            borderRadius={"rounded"}
+            baseColor="#202020"
+            highlightColor="#444"
+          />
         </div>
       </>
     );
@@ -89,10 +87,13 @@ const Products = () => {
                     />
                     <div className="card-body">
                       <h1 className="font-bold text-2xl mb-2">
-                        {product.title.substring(0, 12)}
+                        {product.title.substring(0, 12)}...
                       </h1>
                       <Link to={`/products/product/${product.id}`}>
-                        <button className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200">
+                        <button
+                          onClick={handleClick}
+                          className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"
+                        >
                           Buy Now
                         </button>
                       </Link>

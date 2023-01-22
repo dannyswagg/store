@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addCart } from "../redux/action";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/actions";
 
 const Product = () => {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState([]);
   const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addCart(product));
+  };
+
+  const goBack = () => {
+    navigate(-1);
   };
 
   useEffect(() => {
@@ -31,15 +38,26 @@ const Product = () => {
     return (
       <>
         <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10">
-          <div>
-            <img
-              className="mx-auto rounded shadow-2xl hover:scale-105 duration-300"
-              alt={product.title}
-              height={400}
-              width={400}
-            />
-          </div>
-          <div className="shadow-2xl hover:scale-105 duration-300"></div>
+          <Skeleton
+            className="shadow-xl"
+            height={400}
+            baseColor="#202020"
+            highlightColor="#444"
+          />
+          <SkeletonTheme
+            className="shadow-xl"
+            baseColor="#202020"
+            highlightColor="#444"
+          >
+            <div>
+              <Skeleton height={60} />
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+              <Skeleton height={150} />
+              <Skeleton className="skeleton" width={100} />
+            </div>
+          </SkeletonTheme>
         </div>
       </>
     );
@@ -78,13 +96,19 @@ const Product = () => {
             <h3 className="font-bold text-4xl my-3">$ {product.price}</h3>
             <p className="capitalize my-5">{product.description}</p>
             <button
-              className="mr-2 border border-black hover:bg-[#CF8E69] duration-200 rounded px-6 py-2 font-bold"
               onClick={() => addProduct(product)}
+              className="mr-2 border border-black hover:bg-[#CF8E69] duration-200 rounded px-6 py-2 font-bold"
             >
               Add to Cart
             </button>
             <button className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]">
               Go to Cart
+            </button>
+            <button
+              onClick={goBack}
+              className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]"
+            >
+              Continue Shopping
             </button>
           </div>
         </div>
