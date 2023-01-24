@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -14,10 +14,6 @@ const Product = () => {
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addCart(product));
-  };
-
-  const goBack = () => {
-    navigate(-1);
   };
 
   useEffect(() => {
@@ -101,11 +97,14 @@ const Product = () => {
             >
               Add to Cart
             </button>
-            <button className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]">
+            <button
+              onClick={() => navigate("/cart")}
+              className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]"
+            >
               Go to Cart
             </button>
             <button
-              onClick={goBack}
+              onClick={() => navigate(-1)}
               className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]"
             >
               Continue Shopping

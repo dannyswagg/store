@@ -5,6 +5,7 @@ import { Sling as Hamburger } from "hamburger-react";
 import ber from "../Assests/ber.png";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useSelector } from "react-redux";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const state = useSelector((state) => state.handleCart);
