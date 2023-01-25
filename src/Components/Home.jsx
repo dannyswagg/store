@@ -5,26 +5,24 @@ import Skeleton from "react-loading-skeleton";
 import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [load, setLoad] = useState(null);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    setLoad(Image);
+    setTimeout(() => {
+      setLoad(false);
+    }, 2000);
   }, []);
 
   const Loading = () => {
-    return <Skeleton className="h-full" />;
+    return <Skeleton className="h-screen" />;
   };
-  const Image = () => {
-    return (
-      <div className="w-full">
-        <img src={homebg} alt="apparel" height={100} />
-      </div>
-    );
-  };
+  // const Image = () => {
+  //   return <div className="w-full"></div>;
+  // };
 
   return (
     <>
-      {load ? <Image /> : <Loading />}
+      {load ? <Loading /> : <img src={homebg} alt="apparel" height={100} />}
       <Products />
     </>
   );
