@@ -26,6 +26,7 @@ const Product = () => {
       if (product) {
         setProduct(product);
       }
+      window.scrollTo(0, 0);
     };
     getProduct();
   }, []);
@@ -61,11 +62,8 @@ const Product = () => {
 
   const ShowProduct = () => {
     return (
-      <>
-        <div
-          className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10"
-          key={product.id}
-        >
+      <React.Fragment key={product.id}>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-5 my-10 px-10">
           <div>
             <img
               className="mx-auto"
@@ -111,7 +109,7 @@ const Product = () => {
             </button>
           </div>
         </div>
-      </>
+      </React.Fragment>
     );
   };
 

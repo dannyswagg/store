@@ -77,12 +77,9 @@ const Products = () => {
         <div className="grid lg:grid-cols-3 md:gird-cols-2 sm:grid-cols-2 gap-10">
           {filter.map((product) => {
             return (
-              <>
+              <React.Fragment key={product.id}>
                 <Link to={`/products/product/${product.id}`}>
-                  <div
-                    className="hover:scale-105 duration-300"
-                    key={product.id}
-                  >
+                  <div className="hover:scale-105 duration-300">
                     <div className="shadow-2xl rounded-2xl p-4 mx-auto">
                       <img
                         className="h-[300px] mx-auto mb-2 p-8"
@@ -104,7 +101,7 @@ const Products = () => {
                     </div>
                   </div>
                 </Link>
-              </>
+              </React.Fragment>
             );
           })}
         </div>

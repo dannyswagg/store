@@ -66,10 +66,10 @@ const Contact = () => {
                   Drop in our office
                 </h1>
                 <p className="text-gray-400">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam tincidunt arcu diam, eu feugiat felis fermentum id.
-                  Curabitur vitae nibh viverra, auctor turpis sed, scelerisque
-                  ex.
+                  Berries is an e-commerce platform that helps users shop online
+                  and buy from a wide range of products. Berries has the biggest
+                  selection of products in the world, with over 3000 stores and
+                  3500 brands available online.
                 </p>
 
                 <div className="flex my-4 w-2/3 lg:w-1/2">
@@ -84,7 +84,7 @@ const Contact = () => {
                 <div className="flex my-4 w-2/3 lg:w-1/2">
                   <div className="flex flex-col">
                     <h2 className="text-2xl">Call Us</h2>
-                    <p className="text-gray-400">Tel: xxx-xxx-xxx</p>
+                    <p className="text-gray-400">Tel: +234-816-614-3044</p>
                   </div>
                 </div>
 

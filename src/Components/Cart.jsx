@@ -21,6 +21,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (items.length === 0) {
       setLoading(true);
     } else {
@@ -58,7 +59,7 @@ const Cart = () => {
         </div>
         <div className="grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-3 gap-5 text-center font-bold">
           {items.map((item) => (
-            <>
+            <React.Fragment key={item.id}>
               <div>{item.title.substring(0, 12)}</div>
               <div>
                 <img className="h-[70px] mx-auto" src={item.image} alt="" />
@@ -89,7 +90,7 @@ const Cart = () => {
               <div className="cursor-pointer" onClick={() => delItem(item)}>
                 Remove
               </div>
-            </>
+            </React.Fragment>
           ))}
         </div>
         <hr className="border border-black my-5" />

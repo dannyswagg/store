@@ -14,24 +14,21 @@ const About = () => {
             <div className="px-20 py-8">
               <h2 className="text-2xl my-4 font-thin">Who We Are?</h2>
               <p className="text-gray-400 text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
-                obcaecati quaerat numquam blanditiis vero et ex accusantium
-                modi. Voluptatem nostrum tempore accusamus incidunt ut iste,
-                provident dicta non ipsam. Enim?
+                Berries is an online fashion e-commerce platform where users can
+                shop for items in different categories. You can find stylish
+                dresses, tops, bottoms and shoes designed by young designers
               </p>
               <h2 className="text-2xl my-4 font-thin">What We Do?</h2>
               <p className="text-gray-400  text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
-                officia aspernatur minima. Eum sed veritatis mollitia ut! Nam
-                unde at nemo suscipit incidunt non voluptates obcaecati, dolore,
-                magnam, recusandae veniam.
+                We specialize in a wide range of clothing and accessories. From
+                formal wear to casual clothing and accessories, you can shop
+                online in just a few clicks!
               </p>
               <h3 className="text-2xl my-4 font-thin">Why us?</h3>
               <p className="text-gray-400 text-justify">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
-                sequi dicta voluptates eum, blanditiis veritatis delectus! Quae
-                commodi nostrum architecto quia magni, quibusdam perferendis,
-                obcaecati, minus adipisci corporis a iusto.
+                Berries mission is to help you style your life. Sign up today
+                and find something that resonates with you! If you love to shop,
+                you're going to love us.
               </p>
             </div>
           </div>
