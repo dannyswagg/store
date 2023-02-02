@@ -13,3 +13,10 @@ export const delCart = (product) => {
     payload: product,
   };
 };
+//Decrease quantity of product in the cart
+export const deCart = (product) => {
+  return {
+    type: "DECREASE",
+    payload: product,
+  };
+};

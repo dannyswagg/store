@@ -78,28 +78,32 @@ const Products = () => {
           {filter.map((product) => {
             return (
               <>
-                <div className="hover:scale-105 duration-300" key={product.id}>
-                  <div className="shadow-2xl rounded-2xl p-4 mx-auto">
-                    <img
-                      className="h-[300px] mx-auto mb-2 p-8"
-                      src={product.image}
-                      alt={product.title}
-                    />
-                    <div className="card-body">
-                      <h1 className="font-bold text-2xl mb-2">
-                        {product.title.substring(0, 12)}...
-                      </h1>
-                      <Link to={`/products/product/${product.id}`}>
+                <Link to={`/products/product/${product.id}`}>
+                  <div
+                    className="hover:scale-105 duration-300"
+                    key={product.id}
+                  >
+                    <div className="shadow-2xl rounded-2xl p-4 mx-auto">
+                      <img
+                        className="h-[300px] mx-auto mb-2 p-8"
+                        src={product.image}
+                        alt={product.title}
+                      />
+                      <div className="card-body">
+                        <h1 className="font-bold text-2xl mb-2">
+                          {product.title.substring(0, 12)}...
+                        </h1>
+
                         <button
                           onClick={handleClick}
                           className="rounded px-4 border-black border hover:bg-black hover:text-[#CF8E69] duration-200"
                         >
                           Buy Now
                         </button>
-                      </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </>
             );
           })}

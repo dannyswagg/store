@@ -1,27 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
 import bg3 from "../Assests/bg3.webp";
 
 const About = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
-  const Loading = () => {
-    return (
-      <Skeleton
-        height={300}
-        width={300}
-        borderRadius={"76% 24% 70% 30% / 65% 84% 16% 35%"}
-      />
-    );
-  };
-
   return (
     <>
       <div className="bg-black text-[#CF8E69] pt-5">
@@ -56,11 +36,7 @@ const About = () => {
             </div>
           </div>
           <div className="mx-auto pt-5 mt-10">
-            {loading ? (
-              <Loading />
-            ) : (
-              <img alt="fashion-wear" className="px-10 h-3/4 ib" src={bg3} />
-            )}
+            <img alt="fashion-wear" className="px-10 h-3/4 ib" src={bg3} />
           </div>
         </div>
       </div>

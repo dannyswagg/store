@@ -98,16 +98,16 @@ const Product = () => {
               Add to Cart
             </button>
             <button
-              onClick={() => navigate("/cart")}
-              className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]"
-            >
-              Go to Cart
-            </button>
-            <button
               onClick={() => navigate(-1)}
               className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]"
             >
               Continue Shopping
+            </button>
+            <button
+              onClick={() => navigate("/cart")}
+              className="border rounded px-6 py-2 font-bold bg-black text-[#CF8E69] hover:bg-transparent duration-300 hover:border-[#CF8E69]"
+            >
+              Go to Cart
             </button>
           </div>
         </div>
