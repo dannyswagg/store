@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -29,7 +29,7 @@ const Product = () => {
       window.scrollTo(0, 0);
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return (

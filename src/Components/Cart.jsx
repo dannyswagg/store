@@ -5,9 +5,9 @@ import cartE from "../Assests/cartE.svg";
 import { delCart, addCart, deCart } from "../redux/actions";
 
 const Cart = () => {
+  const [totalPrice, setTotalPrice] = useState(0);
   const [loading, setLoading] = useState(true);
   const items = useSelector((state) => state.handleCart);
-  // console.log(items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const delItem = (item) => {
@@ -20,6 +20,20 @@ const Cart = () => {
     dispatch(deCart(item));
   };
 
+  //Total price for cart items
+
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    items.forEach(item => {
+      totalPrice += item.price * item.qty;
+    });
+    setTotalPrice(totalPrice);
+  }
+
+  useEffect(() => {
+    calculateTotalPrice()
+  }, [items])
+
   useEffect(() => {
     window.scrollTo(0, 0);
     if (items.length === 0) {
@@ -27,7 +41,7 @@ const Cart = () => {
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [items.length]);
 
   const Loading = () => {
     return (
@@ -42,7 +56,7 @@ const Cart = () => {
         >
           Start Shopping
         </button>
-        <img className="mx-auto lg:w-2/4 md:w-full sm:w-full" src={cartE} />
+        <img alt="Shop more" className="mx-auto lg:w-2/4 md:w-full sm:w-full" src={cartE} />
       </div>
     );
   };
@@ -94,9 +108,9 @@ const Cart = () => {
           ))}
         </div>
         <hr className="border border-black my-5" />
-        <div className="flex font-bold justify-around text-lg">
-          <div>Total Price</div>
-          <div> = 3456$</div>
+        <div className="font-bold text-center text-lg grid grid-cols-2">
+          <div>Total items = {items.length}</div>
+          <div>Total = ${totalPrice}</div>
         </div>
       </div>
     );

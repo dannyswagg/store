@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useDispatch, useSelector } from "react-redux";
-import { setProducts } from "../redux/actions";
+
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -34,7 +33,7 @@ const Products = () => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [getProducts]);
 
   const Loading = () => {
     return (
