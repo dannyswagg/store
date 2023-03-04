@@ -8,7 +8,7 @@ const About = () => {
         <h1 className="text-center text-4xl my-6 uppercase font-bold px-4">
           Everything You Need To Know.
         </h1>
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 md:text-center sm:text-center">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1">
           <div>
             {" "}
             <div className="px-20 py-8">
@@ -18,7 +18,9 @@ const About = () => {
                 shop for items in different categories. You can find stylish
                 dresses, tops, bottoms and shoes designed by young designers
               </p>
-              <h2 className="text-2xl my-4 font-thin">What We Do?</h2>
+              <h2 className="text-2xl my-4 font-thin text-right">
+                What We Do?
+              </h2>
               <p className="text-gray-400  text-justify">
                 We specialize in a wide range of clothing and accessories. From
                 formal wear to casual clothing and accessories, you can shop

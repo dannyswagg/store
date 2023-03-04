@@ -35,9 +35,9 @@ const Footer = () => {
               <Link to="contact">
                 <h1
                   onClick={handleClick}
-                  className="bg-black text-[#CF8E69] border border-[#CF8E69] justify-center text-center rounded shadow px-10 py-3 flex items-center"
+                  className="bg-black text-[#CF8E69] border border-[#CF8E69] justify-center text-center rounded shadow px-8 py-3 flex items-center"
                 >
-                  Contact US
+                  Contact Us
                 </h1>
               </Link>
             </div>

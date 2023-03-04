@@ -68,8 +68,8 @@ const Navbar = () => {
             <div className="items-center flex">
               <Link to="cart">
                 <li
-                  className="border lg:hidden border-black text-black rounded
-             bg-[#CF8E69] p-1 inline-flex items-center"
+                  className="border lg:hidden border-black text-[#CF8E69] rounded
+             bg-black p-1 inline-flex items-center"
                 >
                   <FaShoppingCart /> ({state.length})
                 </li>

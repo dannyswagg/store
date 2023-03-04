@@ -110,7 +110,7 @@ const Cart = () => {
         <hr className="border border-black my-5" />
         <div className="font-bold text-center text-lg grid grid-cols-2">
           <div>Total items = {items.length}</div>
-          <div>Total = ${totalPrice}</div>
+          <div>Total = ${totalPrice.toFixed(2)}</div>
         </div>
       </div>
     );
